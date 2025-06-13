@@ -1,0 +1,18 @@
+int buttonPin = 8;
+int ledPin = 2;
+int buttonState = 0;
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+  pinMode(buttonPin, INPUT); // از Pull-up خارجی استفاده می‌کنیم
+}
+
+void loop() {
+  buttonState = digitalRead(buttonPin);
+
+  if (buttonState == LOW) { // دکمه فشرده شده
+    digitalWrite(ledPin, HIGH);
+  } else {
+    digitalWrite(ledPin, LOW);
+  }
+}
